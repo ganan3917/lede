@@ -5,3 +5,4 @@ src-git telephony https://github.com/coolsnowwolf/telephony
 src-git helloworld https://github.com/fw876/helloworld
 src-git OpenClash https://github.com/vernesong/OpenClash
 src-git passwall https://github.com/xiaorouji/openwrt-passwall
+src-git gecoosac https://github.com/lwb1978/openwrt-gecoosac
