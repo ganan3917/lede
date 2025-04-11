@@ -1,0 +1,33 @@
+name: auto_marge
+
+on:
+  # 手动触发
+  workflow_dispatch:
+  # 自动触发，这里设置为每天凌晨 0 点
+  schedule:
+    - cron: '0 15 * * *'
+
+env:
+  SOURCE_REPO: coolsnowwolf/lede
+  SOURCE_BRANCH:  master
+  TARGET_BRANCH:  master
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout target repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+
+      - name: Add source repository as remote
+        run: git remote add source https://github.com/${{ env.SOURCE_REPO }}.git
+
+      - name: Fetch source branch
+        run: git fetch source ${{ env.SOURCE_BRANCH }}
+
+      - name: Merge source branch
+        run: |
+          git merge --no-ff --no-edit source/${{ env.SOURCE_BRANCH }}
+          git push origin ${{ env.TARGET_BRANCH }}    
