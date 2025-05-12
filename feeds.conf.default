@@ -3,5 +3,5 @@ src-git luci https://github.com/coolsnowwolf/luci.git
 src-git routing https://github.com/coolsnowwolf/routing
 src-git telephony https://github.com/coolsnowwolf/telephony.git
 src-git helloworld https://github.com/fw876/helloworld.git
-src-git openClash https://github.com/vernesong/OpenClash.git
+src-git openClash https://github.com/vernesong/OpenClash.git;dev
 src-git passwall https://github.com/xiaorouji/openwrt-passwall.git
